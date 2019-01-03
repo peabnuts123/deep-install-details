@@ -1,14 +1,26 @@
 {
     "cSpell.words": [
-        "peabnuts",
-        "dependents",
-        "spec",
-        "parseable"
+      "etas",
+      "parseable",
+      "promisify",
+      "spec"
     ],
-    "mocha.enabled": true,
     "search.exclude": {
         "**/node_modules": true,
         "**/bower_components": true,
-        "processing-package": true
-    }
-}
+        "processing-package": true,
+        "_publish/": true,
+        "_build/": true,
+    },
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "processing-package": true,
+      "_publish/": false,
+      "_build/": false,
+    },
+    "tslint.configFile": "tslint.json"
+  }

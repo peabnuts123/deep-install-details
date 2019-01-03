@@ -1,2 +1,4 @@
 node_modules/
 processing-package/
+_publish/
+_build/

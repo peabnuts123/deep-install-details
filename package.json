@@ -1,10 +1,17 @@
 {
   "name": "@scrutiny/deep-install-details",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Retrieve details of ALL packages that would be installed if some packages were installed via `npm install`",
   "main": "index.js",
   "scripts": {
-    "test": "mocha \"test/**/*.test.js\""
+    "ts-node": "ts-node -r tsconfig-paths/register",
+    "build": "npm run ts-node -- scripts/build.ts",
+    "build--clean": "npm run ts-node -- scripts/build--clean.ts",
+    "lint": "tslint --project .",
+    "deploy": "npm run ts-node -- scripts/deploy.ts --dry-run",
+    "test": "npm run ts-node -- scripts/test.ts",
+    "link-dev": "npm link @scrutiny/core",
+    "unlink-dev": "npm unlink @scrutiny/core"
   },
   "keywords": [
     "peabnuts123",
@@ -16,19 +23,30 @@
   "author": "peabnuts123",
   "license": "ISC",
   "dependencies": {
+    "lodash": "^4.17.5",
     "npm-package-arg": "^5.1.2",
     "npm-registry": "^0.1.13",
-    "progress": "^2.0.0",
-    "underscore": "^1.8.3",
-    "yargs": "^6.0.0"
+    "progress": "^2.0.0"
   },
   "devDependencies": {
+    "@types/chai": "^4.1.2",
+    "@types/lodash": "^4.14.104",
+    "@types/mocha": "^2.2.48",
+    "@types/node": "^9.4.7",
+    "@types/npm-package-arg": "^5.1.0",
+    "@types/progress": "^2.0.1",
+    "@types/rimraf": "^2.0.2",
     "chai": "^4.1.1",
-    "eslint": "^4.5.0",
-    "mocha": "^3.5.0"
+    "mocha": "^3.5.0",
+    "rimraf": "^2.6.2",
+    "ts-node": "^5.0.1",
+    "tsconfig-paths": "^3.1.3",
+    "tslint": "^5.11.0",
+    "typescript": "^2.9.2"
   },
-  "directories": {
-    "test": "test"
+  "engines": {
+    "node": "^8.10.0",
+    "npm": "^5.6.0"
   },
   "repository": {
     "type": "git",
